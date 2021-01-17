@@ -1,12 +1,13 @@
 def encrypt(key,plaintext):
-    ciphertext=plaintext
+    ciphertext = plaintext
     for c in ciphertext:
-        new_c = c + key;
-        print(new_c)
+        ciphertext[c] = chr(ord(c) + key) 
+    print(ciphertext)
     return ciphertext
 
 def decrypt(key,ciphertext):
-    plaintext=""
+    plaintext = ciphertext
+    for c in plaintext:
+        plaintext[c] = chr(ord(c) - key)
+    print(plaintext)
     return plaintext
-
-print("HELLO")
